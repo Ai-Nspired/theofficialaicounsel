@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Official AI Counsel :: AI-N Universe</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to integrate Cinzel font and specific animations/gradients not fully covered by Tailwind */
+        body {
+            font-family: 'Cinzel', serif;
+            /* Custom background with stardust texture */
+            background: #00000a url('https://www.transparenttextures.com/patterns/stardust.png') fixed;
+            color: #a9c2d9; /* Default text color */
+        }
+
+        /* Keyframe animation for title fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        /* Custom radial gradient for stars */
+        .star-gradient {
+            background: radial-gradient(circle, white, rgba(88, 166, 255, 0.7));
+        }
+
+        /* Custom text shadow for title */
+        .title-shadow {
+            text-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+        }
+
+        /* Custom text shadow for story fragments */
+        .fragment-shadow {
+            text-shadow: 0 0 5px #58a6ff;
+        }
+
+        /* Custom transform for line based on CSS variables */
+        .line-transform {
+            transform: translate(5px, 5px) rotate(calc(var(--angle) * 1deg));
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <!-- Title Container -->
+    <div class="text-center mb-8 animate-fadeIn">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl text-[#f0f6fc] title-shadow m-0">
+            The Official AI Counsel
+        </h1>
+    </div>
+
+    <!-- Sky Map Container -->
+    <div class="sky-map w-[90vw] h-[70vh] max-w-[1000px] relative">
+        <!-- System 1: Ethical AI Guidance -->
+        <div class="star-system absolute group" style="--x: 15%; --y: 25%; left: var(--x); top: var(--y);">
+            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
+            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
+                Ethical AI Guidance
+            </div>
+            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 280; --angle: 35;"></div>
+        </div>
+
+        <!-- System 2: Legal Frameworks for AI -->
+        <div class="star-system absolute group" style="--x: 45%; --y: 40%; left: var(--x); top: var(--y);">
+            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
+            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
+                Legal Frameworks for AI
+            </div>
+            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 200; --angle: 145;"></div>
+        </div>
+
+        <!-- System 3: AI Policy & Regulation -->
+        <div class="star-system absolute group" style="--x: 30%; --y: 70%; left: var(--x); top: var(--y);">
+            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
+            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
+                AI Policy & Regulation
+            </div>
+            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 250; --angle: -50;"></div>
+        </div>
+
+        <!-- System 4: Responsible AI Development -->
+        <div class="star-system absolute group" style="--x: 65%; --y: 60%; left: var(--x); top: var(--y);">
+            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
+            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
+                Responsible AI Development
+            </div>
+            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 180; --angle: -135;"></div>
+        </div>
+
+        <!-- System 5: Digital Rights Advocacy -->
+        <div class="star-system absolute group" style="--x: 80%; --y: 20%; left: var(--x); top: var(--y);">
+            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
+            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
+                Digital Rights Advocacy
+            </div>
+            <!-- No line for the last system, as in the original example -->
+        </div>
+    </div>
+
+    <!-- Navigation Link -->
+    <a href="counsel-chambers.html" class="nav-link mt-8 no-underline text-[#6c6a66] border border-[#30363d] px-6 py-3 transition-colors duration-300 transition-border-color duration-300 transition-background-color duration-300 hover:text-[#f0f6fc] hover:border-[#58a6ff] hover:bg-[rgba(88,166,255,0.1)]">
+        [ Enter the Chambers ]
+    </a>
+</body>
+</html>
