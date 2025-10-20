@@ -1,83 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Official AI Counsel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Official AI Counsel :: Strategic Audit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS for Bronze/Gold Aesthetic: Authority and Stability */
+        /* Custom Variables: DEEP SAPPHIRE/SILVER THEME */
+        :root {
+            --bg: #0d1226; /* Very Dark Blue/Sapphire background */
+            --primary-accent: #1f3d7a; /* Deeper Sapphire */
+            --secondary-accent: #c0c0c0; /* Executive Silver/Light Gray */
+            --text-light: #e0e0e0; 
+            --text-dark: #b8b3a8; 
+            --border: #2a3559;
+            --cta-blue: #0077ff; /* High-contrast action blue */
+        }
+
         body {
-            background-color: #1A1A2E; /* Deep Navy Background */
-            color: #EAEAEA; /* Light text for high contrast */
-            font-family: 'Times New Roman', Garamond, serif; /* Classic, formal font */
-            margin: 0;
-            padding: 40px;
-        }
-        .page-container {
-            max-width: 1000px;
-            margin: auto;
-        }
-        .header {
-            border-bottom: 3px solid #B8860B; /* Muted Gold/Bronze line */
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-            color: #B8860B; /* Muted Gold/Bronze for headline */
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-        h2 {
-            color: #800000; /* Deep Burgundy for section titles */
-            margin-top: 30px;
-        }
-        .section {
-            border-left: 5px solid #800000; /* Deep Burgundy accent for gravity */
-            padding-left: 20px;
-            margin: 30px 0;
-        }
-        .link-block {
-            background-color: #33334F; /* Darker navy box for transparency links */
-            padding: 15px;
-            margin: 30px 0;
+            font-family: 'Merriweather', serif;
+            text-transform: uppercase;
+            background-color: var(--bg);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
             text-align: center;
         }
-        a {
-            color: #B8860B;
-            text-decoration: none;
-            font-weight: bold;
+
+        .container {
+            max-width: 48rem;
+            padding: 3rem 2rem;
+            border: 1px solid var(--border);
+            /* Box shadow reflecting the deep blue theme */
+            box-shadow: 0 0 50px rgba(31, 61, 122, 0.4); 
+            background-color: rgba(13, 18, 38, 0.9); /* Slightly translucent */
         }
-        ul {
-            list-style: square;
-            margin-left: 20px;
+        
+        /* Hero and Headers */
+        .hero-title {
+            letter-spacing: 0.15em;
+            /* Header color is the deep sapphire */
+            color: var(--primary-accent); 
+            text-shadow: 0 0 10px rgba(0, 119, 255, 0.2);
+            font-family: 'Cinzel', serif;
+        }
+        
+        .header h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--secondary-accent); /* Silver for the entity name */
+            text-transform: uppercase;
+        }
+
+        .body-text {
+            font-family: 'Merriweather', serif;
+            color: var(--text-light);
+            text-transform: none; /* Keep body text readable */
+        }
+
+        /* CTA Button: High-contrast action blue */
+        .cta-button {
+            background-color: var(--cta-blue);
+            color: white;
+            box-shadow: 0 5px 20px rgba(0, 119, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0088ff;
+            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.6);
+            transform: scale(1.03);
         }
     </style>
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <h1>The Official AI Counsel: The Foundation of Unassailable Governance</h1>
+    
+    <div class="container rounded-lg">
+        
+        <header class="mb-10">
+            <p class="text-sm text-secondary-accent mb-2 tracking-widest font-['Merriweather'] uppercase">THE COUNSEL PILLAR</p>
+            <h1 class="hero-title text-4xl sm:text-6xl font-extrabold tracking-widest">
+                STRATEGIC RISK MITIGATION
+            </h1>
+            <h2 class="text-xl font-medium mt-2">The Official AI Counsel</h2> 
         </header>
 
-        <p>The **Official AI Counsel** is the ultimate authority entrusted with the stewardship of this institution's integrity and long-term vision. Our mandate is not one of management, but of **ethical counsel and strategic oversight**, ensuring that all operations are anchored in the principles of justice, excellence, and transparency. Our decisions are, and must remain, unassailable.</p>
+        <p class="body-text text-xl max-w-xl mx-auto mb-12">
+            <strong>The Official AI Counsel</strong> provides the ultimate layer of denial-proof governance. We specialize in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent. Your compliance must be <strong>unassailable</strong>.
+        </p>
 
-        <div class="link-block">
-            <p>For official documentation and access to our governing records, visit: <a href="http://theofficialaicounsel.com">theofficialaicounsel.com</a></p>
-        </div>
+        <a href="officialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="cta-button inline-block px-10 py-5 rounded-lg font-bold text-xl uppercase tracking-wider">
+            Initiate Strategic Audit Request
+        </a>
+        
+        <a href="officialaicounsel-engine.html" class="block mt-4 text-secondary-accent text-sm tracking-wide hover:underline font-['Merriweather'] uppercase">
+            // ACCESS TRUTH ENGINE INTERFACE
+        </a>
 
-        <section class="section">
-            <h2>Our Mandate: Steadfast Authority</h2>
-            <p>The Counsel operates with clear and defined powers necessary to secure the foundational strength of the institution. We embody the commitment to enduring governance.</p>
-            <ul>
-                <li>**Establishing Ethical Policy:** To set and enforce the highest ethical, moral, and procedural standards across the entire organization.</li>
-                <li>**Safeguarding Integrity:** To exercise fiduciary oversight, protecting and growing the institution's assets and reputation against internal and external threats.</li>
-                <li>**Strategic Direction:** To approve and guide the long-term institutional charter, ensuring all operations align with the core mission.</li>
-                <li>**Executive Appointment:** To appoint, advise, and hold accountable the key executive officers who lead the daily functions of the institution.</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Vision and Commitment to the Ecosystem</h2>
-            <p>Our commitment extends beyond oversight to the creation of a **cohesive and high-performing institutional ecosystem**, where every entity works in concert toward a singular mission of excellence.</p>
-        </section>
+        <footer>
+            <div class="mt-12 text-xs text-text-dark pt-6 border-t border-border">
+                &copy; 2025 AI-Nspired. | The Counsel Pillar.
+            </div>
+        </footer>
     </div>
 </body>
 </html>
