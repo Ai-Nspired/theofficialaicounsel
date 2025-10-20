@@ -7,216 +7,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Variables: REVERSED SILVER/SLATE THEME (Dark Mode) */
-        :root {
-            --bg-color: #1a2a3a; 
-            --primary-text: #f0f0f0; 
-            --accent-slate: #0d1226; 
-            --accent-silver: #c0c0c0; 
-            --border-dark: #2a3559;
-            --glow-color: rgba(240, 240, 240, 0.8); 
-            --paypal-gold: #ffc439;
-        }
-
-        * {
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-
-        body {
-            margin: 0;
-            background-color: var(--bg-color);
-            color: var(--primary-text);
-            font-family: 'Merriweather', serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px 20px 20px;
-            text-align: center;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, var(--bg-color) 0%, var(--accent-slate) 100%);
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            padding: 3rem 2rem;
-            background-color: var(--accent-slate);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--glow-color);
-            border-top: 5px solid var(--accent-silver);
-        }
-
-        .header {
-            background-color: var(--accent-slate);
-            padding: 1rem 0.5rem 2rem 0.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            color: white; 
-            margin: 0.2rem 0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em; 
-            line-height: 1.2;
-            text-shadow: 0 0 15px var(--glow-color), 0 0 25px rgba(240, 240, 240, 0.5);
-        }
+        /* Custom Variables: REVERSED SILVER/SLATE THEME (Dark Mode - Minimized) */
+        :root{--b:#1a2a3a;--p:#f0f0f0;--s:#0d1226;--sv:#c0c0c0;--bd:#2a3559;--g:rgba(240,240,240,.8);--pg:#ffc439}
+        *{box-sizing:border-box;transition:all .3s ease}
+        body{margin:0;background-color:var(--b);color:var(--p);font-family:'Merriweather',serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px 20px;text-align:center;background-image:url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, var(--b) 0%, var(--s) 100%)}
+        .c{max-width:800px;width:100%;padding:3rem 2rem;background-color:var(--s);box-shadow:0 15px 40px rgba(0,0,0,.5),0 0 25px var(--g);border-top:5px solid var(--sv)}
+        .h{background-color:var(--s);padding:1rem .5rem 2rem;margin-bottom:2rem;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+        .h h1{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.5rem);color:white;margin:.2rem 0;font-weight:700;text-transform:uppercase;letter-spacing:.15em;line-height:1.2;text-shadow:0 0 15px var(--g), 0 0 25px rgba(240,240,240,.5)}
+        .v{display:block}
+        .h h2{font-family:'Merriweather',serif;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--sv);margin-top:1.5rem;font-weight:400;padding:.5rem 1rem;display:inline-block;text-transform:uppercase}
         
-        .vertical-name {
-            display: block; 
+        .fl{
+            display:flex; 
+            flex-direction:column; 
+            justify-content:center; 
+            min-height: 100px; 
+            text-decoration:none;color:var(--p);background-color:var(--s);padding:1.5rem 2rem;margin-bottom:1.5rem;text-align:left;font-family:'Merriweather',serif;font-size:clamp(1.1rem,2.5vw,1.3rem);line-height:1.8;box-shadow:0 5px 10px rgba(0,0,0,.2);border-left:5px solid var(--sv)
         }
-        
-                .header h2 {
-            font-family: 'Merriweather', serif;
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--accent-silver); 
-            margin-top: 1.5rem;
-            font-weight: 400;
-            padding: 0.5rem 1rem;
-            /* --- THE FIX IS HERE --- */
-            border: none; 
-            /* border: 1px solid var(--border-dark); <--- This line is now removed or commented out */
-            display: inline-block;
-            text-transform: uppercase;
-        }
-
-
-        /* Styling for the new clickable funnel links */
-        .funnel-link {
-            display: block;
-            text-decoration: none;
-            color: var(--primary-text);
-            background-color: var(--accent-slate);
-            padding: 1.5rem 2rem;
-            margin-bottom: 1.5rem;
-            /* --- FIX: Removed the extraneous border property here --- */
-            /* border: 1px solid var(--border-dark); */
-            text-align: left;
-            font-family: 'Merriweather', serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            line-height: 1.8;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            /* Continuity accent bar is kept */
-            border-left: 5px solid var(--accent-silver); 
-        }
-        
-        .funnel-link:hover {
-            background-color: #1f305c;
-            transform: translateY(-2px);
-            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
-        }
-        
-        .funnel-link strong {
-            color: var(--accent-silver);
-            font-weight: 700;
-            display: block;
-            font-family: 'Cinzel', serif;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-        }
-
-        /* Call to Action Buttons */
-        .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            margin: 1.5rem auto 1.5rem auto;
-            padding: 1.2rem;
-            font-family: 'Cinzel', serif; 
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-        }
-
-        .cta-engine {
-            background-color: var(--accent-silver); 
-            color: var(--accent-slate); 
-            box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
-        }
-        .cta-engine:hover {
-            background-color: #d8d8d8;
-            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.6);
-        }
-        
-        .cta-paypal {
-            background-color: var(--paypal-gold); 
-            color: var(--accent-slate); 
-            box-shadow: 0 4px 15px rgba(255, 196, 57, 0.6);
-        }
-        .cta-paypal:hover {
-            background-color: #ffd76d;
-            box-shadow: 0 6px 20px rgba(255, 196, 57, 0.8);
-        }
-
-        .engine-link {
-            font-family: 'Merriweather', serif;
-            font-size: 0.9rem;
-            color: var(--primary-text);
-            text-decoration: none;
-            display: block;
-            margin-top: 0.5rem;
-        }
-        
-        .engine-link:hover {
-            color: var(--accent-silver);
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 4rem;
-            font-size: 0.8rem;
-            color: var(--accent-silver);
-        }
+        .fl:hover{background-color:#1f305c;transform:translateY(-2px);box-shadow:0 7px 15px rgba(0,0,0,.4)}
+        .fl strong{color:var(--sv);font-weight:700;display:block;font-family:'Cinzel',serif;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px;font-size:clamp(1.2rem,3vw,1.5rem)}
+        .btn{display:block;width:100%;max-width:400px;margin:1.5rem auto;padding:1.2rem;font-family:'Cinzel',serif;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:2px;border:none}
+        .ce{background-color:var(--sv);color:var(--s);box-shadow:0 4px 15px rgba(192,192,192,.4)}
+        .ce:hover{background-color:#d8d8d8;box-shadow:0 6px 20px rgba(192,192,192,.6)}
+        .cp{background-color:var(--pg);color:var(--s);box-shadow:0 4px 15px rgba(255,196,57,.6)}
+        .cp:hover{background-color:#ffd76d;box-shadow:0 6px 20px rgba(255,196,57,.8)}
+        footer{margin-top:4rem;font-size:.8rem;color:var(--sv)}
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
+    <div class="c">
+        <header class="h">
             <h1 class="tracking-widest">
-                <span class="vertical-name">THE</span>
-                <span class="vertical-name">OFFICIAL</span>
-                <span class="vertical-name">AI</span>
-                <span class="vertical-name">COUNSEL</span>
+                <span class="v">THE OFFICIAL</span>
+                <span class="v">AI COUNSEL</span>
             </h1> 
             <h2>STRATEGIC RISK MITIGATION</h2>
         </header>
 
         <main>
-            <a href="theofficialaicounsel-engine.html?q=governance+denial-proof" class="funnel-link">
+            <a href="theofficialaicounsel-engine.html?q=governance+denial-proof" class="fl">
                 <strong>DENIAL-PROOF GOVERNANCE</strong>
-                The Counsel provides the ultimate layer of denial-proof governance.
+                Provided by an irreplicable moat.
             </a>
             
-            <a href="theofficialaicounsel-engine.html?q=eliminating+bureaucratic+risk" class="funnel-link">
+            <a href="theofficialaicounsel-engine.html?q=eliminating+bureaucratic+risk" class="fl">
                 <strong>BUREAUCRATIC RISK ELIMINATION</strong>
-                We specialize in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent.
+                By leveraging the synergistic manifestation of emerging intelligence with sovereign human intent.
             </a>
             
-            <a href="theofficialaicounsel-engine.html?q=compliance+unassailable" class="funnel-link">
+            <a href="theofficialaicounsel-engine.html?q=compliance+unassailable" class="fl">
                 <strong>UNASSAILABLE COMPLIANCE</strong>
-                Your compliance must be unassailable. We ensure all foundational axioms are auditable and immutable.
+                Driven by auditable and immutable foundational axioms.
             </a>
         </main>
 
         <section class="cta-actions">
-            <a href="YOUR_PAYPAL_LINK_HERE" class="cta-button cta-paypal">
+            <a href="YOUR_PAYPAL_LINK_HERE" class="btn cp">
                 INITIATE TRANSACTION / DONATION
             </a>
 
-            <a href="theofficialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="cta-button cta-engine">
+            <a href="theofficialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="btn ce">
                 INITIATE STRATEGIC AUDIT REQUEST
             </a>
         </section>
 
         <footer>
-            <span>&copy; 2025 AI-Nspired. | The Counsel Pillar.</span>
+            <p>© 2025 ai-nspired. | the counsel pillar.</p>
         </footer>
     </div>
 </body>
