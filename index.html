@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Official AI Counsel :: Strategic Risk Mitigation</title>
-    <meta name="description" content="The Official AI Counsel. Specializing in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
     <style>
         /* Custom Variables: REVERSED SILVER/SLATE THEME (Dark Mode) */
@@ -15,7 +15,7 @@
             --accent-silver: #c0c0c0; 
             --border-dark: #2a3559;
             --glow-color: rgba(240, 240, 240, 0.8); 
-            --paypal-gold: #ffc439; /* PayPal's primary color */
+            --paypal-gold: #ffc439;
         }
 
         * {
@@ -48,11 +48,11 @@
 
         .header {
             background-color: var(--accent-slate);
-            padding: 1rem 0.5rem 2rem 0.5rem; /* Tighter top/bottom padding */
+            padding: 1rem 0.5rem 2rem 0.5rem;
             margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* H1 is now the vertical glowing name */
         .header h1 {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.5rem, 3vw, 2.5rem);
@@ -69,18 +69,20 @@
             display: block; 
         }
         
-        /* H2 is the Strategic Mitigation line - Smaller, block style */
-        .header h2 {
+                .header h2 {
             font-family: 'Merriweather', serif;
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: var(--accent-silver); 
             margin-top: 1.5rem;
             font-weight: 400;
             padding: 0.5rem 1rem;
-            border: 1px solid var(--border-dark);
+            /* --- THE FIX IS HERE --- */
+            border: none; 
+            /* border: 1px solid var(--border-dark); <--- This line is now removed or commented out */
             display: inline-block;
             text-transform: uppercase;
         }
+
 
         /* Styling for the new clickable funnel links */
         .funnel-link {
@@ -90,12 +92,15 @@
             background-color: var(--accent-slate);
             padding: 1.5rem 2rem;
             margin-bottom: 1.5rem;
-            border: 1px solid var(--border-dark);
+            /* --- FIX: Removed the extraneous border property here --- */
+            /* border: 1px solid var(--border-dark); */
             text-align: left;
             font-family: 'Merriweather', serif;
             font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             line-height: 1.8;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            /* Continuity accent bar is kept */
+            border-left: 5px solid var(--accent-silver); 
         }
         
         .funnel-link:hover {
@@ -112,6 +117,7 @@
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
 
         /* Call to Action Buttons */
@@ -129,7 +135,6 @@
             border: none;
         }
 
-        /* Specific style for Truth Engine CTA */
         .cta-engine {
             background-color: var(--accent-silver); 
             color: var(--accent-slate); 
@@ -140,7 +145,6 @@
             box-shadow: 0 6px 20px rgba(192, 192, 192, 0.6);
         }
         
-        /* Specific style for PayPal CTA */
         .cta-paypal {
             background-color: var(--paypal-gold); 
             color: var(--accent-slate); 
