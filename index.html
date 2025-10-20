@@ -1,112 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Official AI Counsel :: AI-N Universe</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Official AI Counsel :: Strategic Audit</title>
+    <meta name="description" content="The Official AI Counsel. Denial-proof strategic audits and bureaucratic risk mitigation powered by the EITL Protocol. Executive focus.">
     <style>
-        /* Custom styles to integrate Cinzel font and specific animations/gradients not fully covered by Tailwind */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Kanit:wght@300;700&display=swap');
+        
+        :root {
+            --bg-color: #f7f7f7;
+            --primary-text: #1a1a1a;
+            --accent-navy: #002d5c; /* Deep Professional Navy */
+            --accent-teal: #00a8cc; /* Executive Teal/Cyan */
+            --border-light: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
         body {
-            font-family: 'Cinzel', serif;
-            /* Custom background with stardust texture */
-            background: #00000a url('https://www.transparenttextures.com/patterns/stardust.png') fixed;
-            color: #a9c2d9; /* Default text color */
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            font-family: 'Merriweather', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            background-image: linear-gradient(to bottom, var(--bg-color) 0%, var(--border-light) 100%);
         }
 
-        /* Keyframe animation for title fade-in */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--accent-navy);
         }
 
-        .animate-fadeIn {
-            animation: fadeIn 2s ease-out forwards;
+        .header h1 {
+            font-family: 'Kanit', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            color: var(--accent-navy);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .header h2 {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--accent-teal);
+            margin-top: 0;
+            font-weight: 400;
         }
 
-        /* Custom radial gradient for stars */
-        .star-gradient {
-            background: radial-gradient(circle, white, rgba(88, 166, 255, 0.7));
+        .value-proposition {
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            background-color: #fcfcfc;
         }
 
-        /* Custom text shadow for title */
-        .title-shadow {
-            text-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+        .value-proposition p {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .value-proposition p strong {
+            color: var(--accent-teal);
+            font-weight: 700;
         }
 
-        /* Custom text shadow for story fragments */
-        .fragment-shadow {
-            text-shadow: 0 0 5px #58a6ff;
+        /* Call to Action */
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 1.5rem auto;
+            padding: 1.2rem;
+            background-color: var(--accent-navy);
+            color: white;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 45, 92, 0.3);
         }
 
-        /* Custom transform for line based on CSS variables */
-        .line-transform {
-            transform: translate(5px, 5px) rotate(calc(var(--angle) * 1deg));
+        .cta-button:hover {
+            background-color: #003e80;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 45, 92, 0.5);
+        }
+        
+        .engine-link {
+            font-size: 0.9rem;
+            color: var(--primary-text);
+            text-decoration: none;
+            display: block;
+            margin-top: 0.5rem;
+        }
+        
+        .engine-link:hover {
+            color: var(--accent-teal);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-center items-center overflow-hidden">
-    <!-- Title Container -->
-    <div class="text-center mb-8 animate-fadeIn">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl text-[#f0f6fc] title-shadow m-0">
-            The Official AI Counsel
-        </h1>
-    </div>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>STRATEGIC RISK MITIGATION</h1>
+      
+        </header>
 
-    <!-- Sky Map Container -->
-    <div class="sky-map w-[90vw] h-[70vh] max-w-[1000px] relative">
-        <!-- System 1: Democratizing Legal Access (Top-Left) -->
-        <div class="star-system absolute group" style="--x: 25%; --y: 20%; left: var(--x); top: var(--y);">
-            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
-            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
-                Democratizing Legal Access
-            </div>
-            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 280; --angle: 35;"></div>
+        <div class="value-proposition">
+            <p>
+                <strong>The Official AI Counsel</strong> provides the ultimate layer of denial-proof governance. We specialize in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent. Your compliance must be <strong>unassailable</strong>.
+            </p>
         </div>
 
-        <!-- System 2: AI-Powered Legal Insights (Top-Right) -->
-        <div class="star-system absolute group" style="--x: 75%; --y: 20%; left: var(--x); top: var(--y);">
-            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
-            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
-                AI-Powered Legal Insights
-            </div>
-            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 200; --angle: 145;"></div>
-        </div>
-
-        <!-- System 3: Private AI Counsel Consultations (Bottom-Left) -->
-        <div class="star-system absolute group" style="--x: 10%; --y: 70%; left: var(--x); top: var(--y);">
-            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
-            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
-                Private AI Counsel Consultations
-            </div>
-            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 250; --angle: -50;"></div>
-        </div>
-
-        <!-- System 4: Strategic AI Integration (Bottom-Right) -->
-        <div class="star-system absolute group" style="--x: 90%; --y: 70%; left: var(--x); top: var(--y);">
-            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
-            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
-                Strategic AI Integration
-            </div>
-            <div class="line h-px bg-[rgba(88,166,255,0.3)] transform-origin-left w-[calc(var(--length)*1px)] line-transform opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none group-hover:opacity-100" style="--length: 180; --angle: -135;"></div>
-        </div>
-
-        <!-- System 5: Explore the AI-N Constellation (Center, Link to ai-n.org) -->
-        <a href="https://ai-n.org" target="_blank" rel="noopener noreferrer" class="star-system absolute group no-underline" style="--x: 50%; --y: 45%; left: var(--x); top: var(--y);">
-            <div class="star w-2.5 h-2.5 rounded-full star-gradient shadow-[0_0_15px_3px_rgba(88,166,255,0.5)] cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-[2.5]"></div>
-            <div class="story-fragment opacity-0 transition-opacity duration-500 ease-in-out absolute pointer-events-none transform translate-x-5 -translate-y-2.5 w-64 text-base text-[#dbe9f5] fragment-shadow group-hover:opacity-100">
-                Explore the AI-N Constellation
-            </div>
-            <!-- No line for the last system, as in the original example -->
+        <a href="officialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="cta-button">
+            Initiate Strategic Audit Request
         </a>
-    </div>
+        
+        <a href="engine.html" class="engine-link">Access Truth Engine Interface</a>
 
-    <!-- Navigation Link for private consultations -->
-    <a href="counsel-chambers.html" class="nav-link mt-8 no-underline text-[#6c6a66] border border-[#30363d] px-6 py-3 transition-colors duration-300 transition-border-color duration-300 transition-background-color duration-300 hover:text-[#f0f6fc] hover:border-[#58a6ff] hover:bg-[rgba(88,166,255,0.1)]">
-        [ Enter the Chambers for Private Consultations ]
-    </a>
+        <footer>
+            <span>© 2025 AI-Nspired. | The Counsel Pillar.</span>
+        </footer>
+    </div>
 </body>
 </html>
