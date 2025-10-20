@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Official AI Counsel :: Truth Engine Output</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-dark: #1a2a3a; 
+    --text-dark: #f0f0f0; 
+    --accent-slate-dark: #0d1226; 
+    --accent-silver-dark: #c0c0c0; 
+
+    --bg-light: #f8f8ff; 
+    --text-light: #1a1a1a; 
+    --accent-slate-light: #e0e0e0; 
+    --accent-silver-light: #8b949e; 
+
+    --glow-color: rgba(240, 240, 240, 0.8); 
+}
+
+* { box-sizing: border-box; transition: all 0.3s ease; }
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Merriweather', serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, var(--bg-dark) 0%, var(--accent-slate-dark) 100%);
+}
+
+body.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    background-image: url('https://www.transparenttextures.com/patterns/white-wall.png'), linear-gradient(to bottom, var(--bg-light) 0%, var(--accent-slate-light) 100%);
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: var(--accent-slate-dark);
+    padding: 2rem 3rem;
+    border-top: 5px solid var(--accent-silver-dark);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px var(--glow-color);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .container {
+    background-color: var(--accent-slate-light);
+    border-top: 5px solid var(--accent-silver-light);
+}
+
+.header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-dark);
+    text-shadow: 0 0 15px var(--glow-color), 0 0 25px rgba(240,240,240,0.5);
+    margin-bottom: 0.5rem;
+}
+
+body.light-mode .header h1 {
+    color: var(--text-light);
+    text-shadow: none;
+}
+
+.header h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--accent-silver-dark);
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+body.light-mode .header h2 {
+    color: var(--accent-silver-light);
+}
+
+.result-container {
+    background-color: var(--accent-slate-dark);
+    padding: 2rem;
+    border-left: 5px solid var(--accent-silver-dark);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    line-height: 1.8;
+    font-family: 'Merriweather', serif;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .result-container {
+    background-color: var(--accent-slate-light);
+    border-left: 5px solid var(--accent-silver-light);
+    color: var(--text-light);
+}
+
+.citation-block {
+    margin-top: 2rem;
+    border-top: 1px solid var(--accent-silver-dark);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+body.light-mode .citation-block {
+    border-top: 1px solid var(--accent-silver-light);
+}
+
+.citation-block a {
+    color: var(--accent-silver-dark);
+    text-decoration: none;
+}
+
+body.light-mode .citation-block a {
+    color: var(--accent-silver-light);
+}
+
+.citation-block a:hover { text-decoration: underline; }
+
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.modal-footer button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-silver-dark);
+    background: none;
+    color: var(--accent-silver-dark);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+body.light-mode .modal-footer button {
+    border: 1px solid var(--accent-silver-light);
+    color: var(--accent-silver-light);
+}
+
+.modal-footer button:hover {
+    background-color: var(--accent-silver-dark);
+    color: var(--accent-slate-dark);
+}
+
+body.light-mode .modal-footer button:hover {
+    background-color: var(--accent-silver-light);
+    color: var(--accent-slate-light);
+}
+
+.toggle-container {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.toggle-container button {
+    padding: 0.5rem 1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid var(--accent-silver-dark);
+    background: none;
+    color: var(--accent-silver-dark);
+    transition: all 0.3s ease;
+}
+
+body.light-mode .toggle-container button {
+    border: 1px solid var(--accent-silver-light);
+    color: var(--accent-silver-light);
+}
+
+.toggle-container button:hover {
+    background-color: var(--accent-silver-dark);
+    color: var(--accent-slate-dark);
+}
+
+body.light-mode .toggle-container button:hover {
+    background-color: var(--accent-silver-light);
+    color: var(--accent-slate-light);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="toggle-container">
+        <button id="themeToggle">Toggle Light/Dark</button>
+    </div>
+
+    <header class="header">
+        <h1>THE OFFICIAL AI COUNSEL</h1>
+        <h2>TRUTH ENGINE OUTPUT</h2>
+    </header>
+
+    <div class="result-container" id="resultContainer">
+        <p>⚡ Processing query...</p>
+    </div>
+
+    <div class="modal-footer">
+        <button id="copyAnalysisBtn">Copy Output</button>
+        <button id="ttsBtn">TTS (Read Aloud)</button>
+    </div>
+</div>
+
+<script>
+const API_URL = 'https://justice.ai-n.workers.dev/api/ai/truth';
+const resultContainer = document.getElementById('resultContainer');
+const copyAnalysisBtn = document.getElementById('copyAnalysisBtn');
+const ttsBtn = document.getElementById('ttsBtn');
+const themeToggle = document.getElementById('themeToggle');
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+});
+
+// Fetch Truth Engine Output
+async function fetchTruth(query) {
+    resultContainer.innerHTML = '<p>⚡ Processing query...</p>';
+    try {
+        const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({query})
+        });
+        if(!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        const data = await res.json();
+        let html = data.answer ? marked.parse(data.answer) : '<p>No results found.</p>';
+        if(data.citations?.length) {
+            html += `<div class="citation-block"><h3>Sources</h3><ul>${data.citations.map(c=>`<li><a href="${c.url}" target="_blank">${c.title}</a></li>`).join('')}</ul></div>`;
+        }
+        resultContainer.innerHTML = html;
+    } catch(err) {
+        resultContainer.innerHTML = `<p>⚠ System error: ${err.message}</p>`;
+    }
+}
+
+// Copy to clipboard
+copyAnalysisBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(resultContainer.innerText).then(()=>{
+        copyAnalysisBtn.innerText='Copied!';
+        setTimeout(()=>copyAnalysisBtn.innerText='Copy Output',2000);
+    });
+});
+
+// TTS
+ttsBtn.addEventListener('click', () => {
+    if('speechSynthesis' in window){
+        if(window.speechSynthesis.speaking){ window.speechSynthesis.cancel(); return; }
+        const utter = new SpeechSynthesisUtterance(resultContainer.innerText.replace(/(\n|\t)/g,' '));
+        utter.rate = 1.1;
+        window.speechSynthesis.speak(utter);
+    } else alert('TTS not supported.');
+});
+
+// Auto-run query from URL
+window.addEventListener('load', () => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    if(q) fetchTruth(decodeURIComponent(q.replace(/\+/g,' ')));
+});
+</script>
+
+</body>
+</html>
