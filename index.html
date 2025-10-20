@@ -3,107 +3,216 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Official AI Counsel :: Strategic Audit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>The Official AI Counsel :: Strategic Risk Mitigation</title>
+    <meta name="description" content="The Official AI Counsel. Specializing in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent.">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Variables: DEEP SAPPHIRE/SILVER THEME */
+        /* Custom Variables: REVERSED SILVER/SLATE THEME (Dark Mode) */
         :root {
-            --bg: #0d1226; /* Very Dark Blue/Sapphire background */
-            --primary-accent: #1f3d7a; /* Deeper Sapphire */
-            --secondary-accent: #c0c0c0; /* Executive Silver/Light Gray */
-            --text-light: #e0e0e0; 
-            --text-dark: #b8b3a8; 
-            --border: #2a3559;
-            --cta-blue: #0077ff; /* High-contrast action blue */
+            --bg-color: #1a2a3a; 
+            --primary-text: #f0f0f0; 
+            --accent-slate: #0d1226; 
+            --accent-silver: #c0c0c0; 
+            --border-dark: #2a3559;
+            --glow-color: rgba(240, 240, 240, 0.8); 
+            --paypal-gold: #ffc439; /* PayPal's primary color */
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
             font-family: 'Merriweather', serif;
-            text-transform: uppercase;
-            background-color: var(--bg);
-            color: var(--text-light);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            padding: 1rem;
-            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            padding: 40px 20px 20px 20px;
             text-align: center;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, var(--bg-color) 0%, var(--accent-slate) 100%);
         }
 
         .container {
-            max-width: 48rem;
+            max-width: 800px;
+            width: 100%;
             padding: 3rem 2rem;
-            border: 1px solid var(--border);
-            /* Box shadow reflecting the deep blue theme */
-            box-shadow: 0 0 50px rgba(31, 61, 122, 0.4); 
-            background-color: rgba(13, 18, 38, 0.9); /* Slightly translucent */
+            background-color: var(--accent-slate);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--glow-color);
+            border-top: 5px solid var(--accent-silver);
         }
-        
-        /* Hero and Headers */
-        .hero-title {
-            letter-spacing: 0.15em;
-            /* Header color is the deep sapphire */
-            color: var(--primary-accent); 
-            text-shadow: 0 0 10px rgba(0, 119, 255, 0.2);
+
+        .header {
+            background-color: var(--accent-slate);
+            padding: 1rem 0.5rem 2rem 0.5rem; /* Tighter top/bottom padding */
+            margin-bottom: 2rem;
+        }
+
+        /* H1 is now the vertical glowing name */
+        .header h1 {
             font-family: 'Cinzel', serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: white; 
+            margin: 0.2rem 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em; 
+            line-height: 1.2;
+            text-shadow: 0 0 15px var(--glow-color), 0 0 25px rgba(240, 240, 240, 0.5);
         }
         
+        .vertical-name {
+            display: block; 
+        }
+        
+        /* H2 is the Strategic Mitigation line - Smaller, block style */
         .header h2 {
             font-family: 'Merriweather', serif;
-            color: var(--secondary-accent); /* Silver for the entity name */
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--accent-silver); 
+            margin-top: 1.5rem;
+            font-weight: 400;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-dark);
+            display: inline-block;
             text-transform: uppercase;
         }
 
-        .body-text {
+        /* Styling for the new clickable funnel links */
+        .funnel-link {
+            display: block;
+            text-decoration: none;
+            color: var(--primary-text);
+            background-color: var(--accent-slate);
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-dark);
+            text-align: left;
             font-family: 'Merriweather', serif;
-            color: var(--text-light);
-            text-transform: none; /* Keep body text readable */
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            line-height: 1.8;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .funnel-link:hover {
+            background-color: #1f305c;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .funnel-link strong {
+            color: var(--accent-silver);
+            font-weight: 700;
+            display: block;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* CTA Button: High-contrast action blue */
+        /* Call to Action Buttons */
         .cta-button {
-            background-color: var(--cta-blue);
-            color: white;
-            box-shadow: 0 5px 20px rgba(0, 119, 255, 0.4);
-            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 1.5rem auto 1.5rem auto;
+            padding: 1.2rem;
+            font-family: 'Cinzel', serif; 
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
         }
-        .cta-button:hover {
-            background-color: #0088ff;
-            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.6);
-            transform: scale(1.03);
+
+        /* Specific style for Truth Engine CTA */
+        .cta-engine {
+            background-color: var(--accent-silver); 
+            color: var(--accent-slate); 
+            box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+        }
+        .cta-engine:hover {
+            background-color: #d8d8d8;
+            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.6);
+        }
+        
+        /* Specific style for PayPal CTA */
+        .cta-paypal {
+            background-color: var(--paypal-gold); 
+            color: var(--accent-slate); 
+            box-shadow: 0 4px 15px rgba(255, 196, 57, 0.6);
+        }
+        .cta-paypal:hover {
+            background-color: #ffd76d;
+            box-shadow: 0 6px 20px rgba(255, 196, 57, 0.8);
+        }
+
+        .engine-link {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            color: var(--primary-text);
+            text-decoration: none;
+            display: block;
+            margin-top: 0.5rem;
+        }
+        
+        .engine-link:hover {
+            color: var(--accent-silver);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            font-size: 0.8rem;
+            color: var(--accent-silver);
         }
     </style>
 </head>
 <body>
-    
-    <div class="container rounded-lg">
-        
-        <header class="mb-10">
-            <p class="text-sm text-secondary-accent mb-2 tracking-widest font-['Merriweather'] uppercase">THE COUNSEL PILLAR</p>
-            <h1 class="hero-title text-4xl sm:text-6xl font-extrabold tracking-widest">
-                STRATEGIC RISK MITIGATION
-            </h1>
-            <h2 class="text-xl font-medium mt-2">The Official AI Counsel</h2> 
+    <div class="container">
+        <header class="header">
+            <h1 class="tracking-widest">
+                <span class="vertical-name">THE</span>
+                <span class="vertical-name">OFFICIAL</span>
+                <span class="vertical-name">AI</span>
+                <span class="vertical-name">COUNSEL</span>
+            </h1> 
+            <h2>STRATEGIC RISK MITIGATION</h2>
         </header>
 
-        <p class="body-text text-xl max-w-xl mx-auto mb-12">
-            <strong>The Official AI Counsel</strong> provides the ultimate layer of denial-proof governance. We specialize in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent. Your compliance must be <strong>unassailable</strong>.
-        </p>
+        <main>
+            <a href="theofficialaicounsel-engine.html?q=governance+denial-proof" class="funnel-link">
+                <strong>DENIAL-PROOF GOVERNANCE</strong>
+                The Counsel provides the ultimate layer of denial-proof governance.
+            </a>
+            
+            <a href="theofficialaicounsel-engine.html?q=eliminating+bureaucratic+risk" class="funnel-link">
+                <strong>BUREAUCRATIC RISK ELIMINATION</strong>
+                We specialize in eliminating bureaucratic risk and aligning emerging intelligence with sovereign human intent.
+            </a>
+            
+            <a href="theofficialaicounsel-engine.html?q=compliance+unassailable" class="funnel-link">
+                <strong>UNASSAILABLE COMPLIANCE</strong>
+                Your compliance must be unassailable. We ensure all foundational axioms are auditable and immutable.
+            </a>
+        </main>
 
-        <a href="officialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="cta-button inline-block px-10 py-5 rounded-lg font-bold text-xl uppercase tracking-wider">
-            Initiate Strategic Audit Request
-        </a>
-        
-        <a href="officialaicounsel-engine.html" class="block mt-4 text-secondary-accent text-sm tracking-wide hover:underline font-['Merriweather'] uppercase">
-            // ACCESS TRUTH ENGINE INTERFACE
-        </a>
+        <section class="cta-actions">
+            <a href="YOUR_PAYPAL_LINK_HERE" class="cta-button cta-paypal">
+                INITIATE TRANSACTION / DONATION
+            </a>
+
+            <a href="theofficialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="cta-button cta-engine">
+                INITIATE STRATEGIC AUDIT REQUEST
+            </a>
+        </section>
 
         <footer>
-            <div class="mt-12 text-xs text-text-dark pt-6 border-t border-border">
-                &copy; 2025 AI-Nspired. | The Counsel Pillar.
-            </div>
+            <span>&copy; 2025 AI-Nspired. | The Counsel Pillar.</span>
         </footer>
     </div>
 </body>
