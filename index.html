@@ -1,79 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Official AI Counsel :: Strategic Risk Mitigation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom Variables: REVERSED SILVER/SLATE THEME (Dark Mode - Minimized) */
-        :root{--b:#1a2a3a;--p:#f0f0f0;--s:#0d1226;--sv:#c0c0c0;--bd:#2a3559;--g:rgba(240,240,240,.8);--pg:#ffc439}
-        *{box-sizing:border-box;transition:all .3s ease}
-        body{margin:0;background-color:var(--b);color:var(--p);font-family:'Merriweather',serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px 20px;text-align:center;background-image:url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, var(--b) 0%, var(--s) 100%)}
-        .c{max-width:800px;width:100%;padding:3rem 2rem;background-color:var(--s);box-shadow:0 15px 40px rgba(0,0,0,.5),0 0 25px var(--g);border-top:5px solid var(--sv)}
-        .h{background-color:var(--s);padding:1rem .5rem 2rem;margin-bottom:2rem;box-shadow:0 5px 15px rgba(0,0,0,.2)}
-        .h h1{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.5rem);color:white;margin:.2rem 0;font-weight:700;text-transform:uppercase;letter-spacing:.15em;line-height:1.2;text-shadow:0 0 15px var(--g), 0 0 25px rgba(240,240,240,.5)}
-        .v{display:block}
-        .h h2{font-family:'Merriweather',serif;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--sv);margin-top:1.5rem;font-weight:400;padding:.5rem 1rem;display:inline-block;text-transform:uppercase}
-        
-        .fl{
-            display:flex; 
-            flex-direction:column; 
-            justify-content:center; 
-            min-height: 100px; 
-            text-decoration:none;color:var(--p);background-color:var(--s);padding:1.5rem 2rem;margin-bottom:1.5rem;text-align:left;font-family:'Merriweather',serif;font-size:clamp(1.1rem,2.5vw,1.3rem);line-height:1.8;box-shadow:0 5px 10px rgba(0,0,0,.2);border-left:5px solid var(--sv)
-        }
-        .fl:hover{background-color:#1f305c;transform:translateY(-2px);box-shadow:0 7px 15px rgba(0,0,0,.4)}
-        .fl strong{color:var(--sv);font-weight:700;display:block;font-family:'Cinzel',serif;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:1px;font-size:clamp(1.2rem,3vw,1.5rem)}
-        .btn{display:block;width:100%;max-width:400px;margin:1.5rem auto;padding:1.2rem;font-family:'Cinzel',serif;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:2px;border:none}
-        .ce{background-color:var(--sv);color:var(--s);box-shadow:0 4px 15px rgba(192,192,192,.4)}
-        .ce:hover{background-color:#d8d8d8;box-shadow:0 6px 20px rgba(192,192,192,.6)}
-        .cp{background-color:var(--pg);color:var(--s);box-shadow:0 4px 15px rgba(255,196,57,.6)}
-        .cp:hover{background-color:#ffd76d;box-shadow:0 6px 20px rgba(255,196,57,.8)}
-        footer{margin-top:4rem;font-size:.8rem;color:var(--sv)}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Official AI Counsel :: Legal Risk Clarity</title>
+  <meta name="description" content="We help founders resolve legal risk fast using clear, automated action plans.">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --b:#1a2a3a;--s:#0d1226;--p:#f0f0f0;
+      --sv:#c0c0c0;--g:rgba(240,240,240,.6)
+    }
+    body{
+      margin:0;padding:40px 20px;
+      background:linear-gradient(to bottom,var(--b),var(--s));
+      color:var(--p);font-family:'Merriweather',serif;
+      display:flex;justify-content:center
+    }
+    .c{
+      max-width:800px;width:100%;
+      background:var(--s);padding:3rem;
+      border-top:5px solid var(--sv);
+      box-shadow:0 15px 40px rgba(0,0,0,.5)
+    }
+    header{text-align:center;margin-bottom:2.5rem}
+    h1{
+      font-family:'Cinzel',serif;
+      text-transform:uppercase;
+      letter-spacing:.15em
+    }
+    h2{
+      font-size:1rem;
+      color:var(--sv);
+      margin-top:1rem;
+      text-transform:uppercase
+    }
+    .block{
+      display:block;margin-bottom:1.5rem;
+      padding:1.5rem 2rem;
+      border-left:5px solid var(--sv);
+      background:#12183a;color:var(--p);
+      text-decoration:none
+    }
+    .block strong{
+      font-family:'Cinzel',serif;
+      display:block;color:var(--sv);
+      margin-bottom:.4rem
+    }
+    .btn{
+      display:block;margin:2rem auto 0;
+      max-width:400px;padding:1.2rem;
+      background:var(--sv);color:#0d1226;
+      text-align:center;text-decoration:none;
+      font-family:'Cinzel',serif;
+      letter-spacing:.15em;font-weight:700
+    }
+    footer{
+      margin-top:4rem;
+      font-size:.8rem;text-align:center;
+      color:var(--sv)
+    }
+  </style>
 </head>
+
 <body>
-    <div class="c">
-        <header class="h">
-            <h1 class="tracking-widest">
-                <span class="v">THE OFFICIAL</span>
-                <span class="v">AI COUNSEL</span>
-            </h1> 
-            <h2>STRATEGIC RISK MITIGATION</h2>
-        </header>
+  <div class="c">
+    <header>
+      <h1>THE OFFICIAL AI COUNSEL</h1>
+      <h2>Legal Clarity for Founders</h2>
+    </header>
 
-        <main>
-            <a href="theofficialaicounsel-engine.html?q=governance+denial-proof" class="fl">
-                <strong>DENIAL-PROOF GOVERNANCE</strong>
-                Provided by an irreplicable moat.
-            </a>
-            
-            <a href="theofficialaicounsel-engine.html?q=eliminating+bureaucratic+risk" class="fl">
-                <strong>BUREAUCRATIC RISK ELIMINATION</strong>
-                By leveraging the synergistic manifestation of emerging intelligence with sovereign human intent.
-            </a>
-            
-            <a href="theofficialaicounsel-engine.html?q=compliance+unassailable" class="fl">
-                <strong>UNASSAILABLE COMPLIANCE</strong>
-                Driven by auditable and immutable foundational axioms.
-            </a>
-        </main>
+    <main>
+      <a href="engine.html?q=founder+risk+map" class="block">
+        <strong>FOUNDER RISK CLARITY MAP</strong>
+        Identify real legal exposure and what actually needs action.
+      </a>
 
-        <section class="cta-actions">
-            <a href="YOUR_PAYPAL_LINK_HERE" class="btn cp">
-                INITIATE TRANSACTION / DONATION
-            </a>
+      <a href="engine.html?q=legal+systems+cleanup" class="block">
+        <strong>LEGAL SYSTEMS CLEANUP</strong>
+        Turn scattered obligations into a clear, automated workflow.
+      </a>
 
-            <a href="theofficialaicounsel-engine.html?q=Request EITL Strategic Audit Slot" class="btn ce">
-                INITIATE STRATEGIC AUDIT REQUEST
-            </a>
-        </section>
+      <a href="engine.html?q=compliance+without+overkill" class="block">
+        <strong>COMPLIANCE WITHOUT OVERKILL</strong>
+        Document smart decisions without unnecessary complexity.
+      </a>
+    </main>
 
-        <footer>
-            <p>© 2025 ai-nspired. | the counsel pillar.</p>
-        </footer>
-    </div>
+    <a href="engine.html?q=Strategic+Risk+Audit+Request" class="btn">
+      REQUEST A STRATEGIC RISK AUDIT
+    </a>
+
+    <footer>
+      © 2025 theofficialaicounsel.com  
+      <br>
+      Advisory and educational services only. Not legal representation.
+    </footer>
+  </div>
 </body>
 </html>
