@@ -1,29 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Official AI Counsel :: Legal Risk Clarity</title>
-<style>
-body { margin:0;padding:40px; background:linear-gradient(to bottom,#1a2a3a,#0d1226); font-family:'Merriweather',serif; color:#f0f0f0; display:flex; flex-direction:column; align-items:center;}
-h1 { font-family:'Cinzel',serif; font-size:3rem; color:#c0c0c0; margin-bottom:0.5rem; }
-h2 { font-size:1rem; color:#c0c0c0; margin-bottom:2rem; text-transform:uppercase; }
-a.block { display:block; padding:1.5rem 2rem; margin-bottom:1rem; border-left:5px solid #c0c0c0; background:#12183a; text-decoration:none; color:#f0f0f0; font-weight:bold; }
-a.block:hover { background:#0f1330; transform:translateY(-2px); }
-.button { display:block; margin:2rem auto; padding:1rem 2rem; text-decoration:none; color:#0d1226; background:#c0c0c0; font-weight:bold; width:300px; text-align:center; transition:0.3s; }
-.button:hover { background:#f0f0f0; transform:translateY(-2px); }
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Official AI Counsel :: Legal Risk Clarity</title>
+    <meta name="description" content="The Official AI Counsel. From Risk to Certainty. Strategic legal risk architecture for AI-driven enterprises.">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Variables: CHERRY WOOD THEME */
+        :root{
+            --wood-dark: #2c1810;
+            --wood-medium: #4a2c20;
+            --wood-light: #6d3f30;
+            --wood-accent: #8b4513;
+            --wood-deep: #1f1109;
+            --brass: #d4a574;
+            --brass-light: #e6c9a8;
+            --brass-dark: #bc8354;
+            --text-light: #f5e6d3;
+            --text-muted: #c4b5a3;
+            --card-bg: #3d1f17;
+            --card-hover: #4d2a20;
+        }
+        
+        *{box-sizing:border-box;transition:all .3s ease}
+        
+        body{
+            margin:0;
+            background-color:var(--wood-dark);
+            color:var(--text-light);
+            font-family:'Merriweather',serif;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            padding:40px 20px 20px;
+            text-align:center;
+            background-image: 
+                url('https://www.transparenttextures.com/patterns/wood-pattern.png'),
+                linear-gradient(to bottom, #3e2723 0%, #1f1109 100%);
+            background-blend-mode: multiply;
+        }
+        
+        .c{
+            max-width:800px;
+            width:100%;
+            padding:3rem;
+            background-color:var(--wood-deep);
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,.5),
+                0 0 60px rgba(212,165,116,.1),
+                inset 0 1px 0 rgba(255,255,255,.05);
+            border-top:5px solid var(--brass);
+            border:1px solid rgba(212,165,116,.2);
+            position:relative;
+        }
+        
+        .c::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            height:1px;
+            background:linear-gradient(to right, transparent, var(--brass), transparent);
+        }
+        
+        .h{
+            background-color:var(--wood-medium);
+            padding:2rem .5rem;
+            margin-bottom:2rem;
+            box-shadow: 
+                0 5px 15px rgba(0,0,0,.4),
+                inset 0 1px 0 rgba(255,255,255,.1);
+            border-bottom:2px solid var(--brass);
+            border-top:1px solid rgba(212,165,116,.3);
+        }
+        
+        .h h1{
+            font-family:'Cinzel',serif;
+            font-size:clamp(1.5rem,3vw,2.5rem);
+            color:var(--brass-light);
+            margin:.2rem 0;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:.15em;
+            line-height:1.2;
+            text-shadow: 0 0 20px rgba(212,165,116,.3), 0 2px 4px rgba(0,0,0,.5);
+        }
+        
+        .v{display:block}
+        
+        .h2{
+            font-family:'Merriweather',serif;
+            font-size:0.9rem;
+            color:var(--brass);
+            margin-bottom:2rem;
+            text-transform:uppercase;
+            letter-spacing:3px;
+            font-weight:300;
+        }
+        
+        .fl{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            min-height:120px;
+            text-decoration:none;
+            color:var(--text-light);
+            padding:1.5rem 2rem;
+            margin-bottom:1.5rem;
+            text-align:left;
+            font-family:'Merriweather',serif;
+            font-size:clamp(1.1rem,2.5vw,1.3rem);
+            line-height:1.8;
+            background:linear-gradient(to right, var(--card-bg), rgba(61,31,23,.8));
+            border-left:5px solid var(--brass);
+            box-shadow: 
+                0 3px 15px rgba(0,0,0,.3),
+                inset 0 1px 0 rgba(255,255,255,.05);
+        }
+        
+        .fl:hover{
+            background:linear-gradient(to right, var(--card-hover), rgba(77,42,32,.9));
+            transform:translateY(-2px);
+            box-shadow: 
+                0 5px 20px rgba(0,0,0,.4),
+                0 0 20px rgba(212,165,116,.1);
+            border-left-color:var(--brass-light);
+        }
+        
+        .fl strong{
+            color:var(--brass-light);
+            font-weight:700;
+            display:block;
+            font-family:'Cinzel',serif;
+            margin-bottom:.5rem;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            font-size:clamp(1.2rem,3vw,1.5rem);
+            text-shadow:0 1px 2px rgba(0,0,0,.5);
+        }
+        
+        .btn{
+            display:block;
+            width:100%;
+            max-width:400px;
+            margin:1rem auto .5rem;
+            padding:1.2rem;
+            font-family:'Cinzel',serif;
+            font-weight:700;
+            text-decoration:none;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            border:none;
+            text-align:center;
+            cursor:pointer;
+            text-shadow:0 1px 2px rgba(0,0,0,.3);
+        }
+        
+        .p{
+            background:linear-gradient(to bottom, var(--wood-light), var(--wood-medium));
+            color:var(--text-light);
+            box-shadow: 
+                0 4px 15px rgba(0,0,0,.4),
+                inset 0 1px 0 rgba(255,255,255,.1),
+                0 0 15px rgba(212,165,116,.2);
+            border:1px solid var(--brass-dark);
+        }
+        
+        .p:hover{
+            background:linear-gradient(to bottom, var(--wood-accent), var(--wood-light));
+            transform:translateY(-2px);
+            box-shadow: 
+                0 6px 20px rgba(0,0,0,.5),
+                0 0 25px rgba(212,165,116,.3);
+        }
+        
+        .s{
+            background:transparent;
+            color:var(--brass);
+            box-shadow: 
+                0 4px 15px rgba(0,0,0,.3),
+                0 0 0 2px var(--brass);
+            border:2px solid var(--brass);
+        }
+        
+        .s:hover{
+            background:rgba(212,165,116,.1);
+            color:var(--brass-light);
+            transform:translateY(-2px);
+            box-shadow: 
+                0 6px 20px rgba(0,0,0,.4),
+                0 0 0 2px var(--brass-light),
+                0 0 20px rgba(212,165,116,.2);
+        }
+        
+        footer{
+            margin-top:4rem;
+            font-size:.8rem;
+            color:var(--text-muted);
+        }
+        
+        footer p{
+            color:var(--brass);
+            opacity:.7;
+        }
+    </style>
 </head>
 <body>
-<h1>THE OFFICIAL AI COUNCIL</h1>
-<h2>From Risk to Certainty</h2>
+    <div class="c">
+        <header class="h">
+            <h1>
+                <span class="v">THE OFFICIAL</span>
+                <span class="v">AI COUNSEL</span>
+            </h1> 
+        </header>
+        
+        <div class="h2">From Risk to Certainty</div>
 
-<a href="engine.html?q=founder+risk+map" class="block">FOUNDER RISK CLARITY MAP</a>
-<a href="engine.html?q=legal+systems+cleanup" class="block">LEGAL SYSTEMS CLEANUP</a>
-<a href="engine.html?q=compliance+without+overkill" class="block">COMPLIANCE WITHOUT OVERKILL</a>
+        <main>
+            <a href="engine.html?q=founder+risk+map" class="fl">
+                <strong>Founder Risk Clarity Map</strong>
+                Comprehensive liability assessment across corporate structure, IP, and founder agreements.
+            </a>
+            
+            <a href="engine.html?q=legal+systems+cleanup" class="fl">
+                <strong>Legal Systems Cleanup</strong>
+                Audit and optimize contracts, compliance frameworks, and operational protocols.
+            </a>
+            
+            <a href="engine.html?q=compliance+without+overkill" class="fl">
+                <strong>Compliance Without Overkill</strong>
+                Right-sized regulatory compliance for AI-driven enterprises.
+            </a>
+        </main>
 
-<a href="engine.html?q=Strategic+Risk+Audit+Request" class="button">REQUEST STRATEGIC RISK AUDIT</a>
-<a href="ai-n.org" class="button">[ RETURN TO AI-N HUB ]</a>
-<a href="ai-nspired.com" class="button">[ VISIT AI-NSPIRED DIGITAL KIT ]</a>
+        <section class="cta-actions">
+            <a href="engine.html?q=Strategic+Risk+Audit+Request" class="btn p">
+                Request Strategic Risk Audit
+            </a>
+            
+            <a href="ai-n.org" class="btn s">
+                [ Return to AI-N Hub ]
+            </a>
+            
+            <a href="ai-nspired.com" class="btn s">
+                [ Visit AI-Nspired Digital Kit ]
+            </a>
+        </section>
+
+        <footer>
+            <p>© 2025 ai-nspired. | the counsel pillar.</p>
+        </footer>
+    </div>
 </body>
 </html>
